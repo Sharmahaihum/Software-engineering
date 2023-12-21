@@ -1,0 +1,22 @@
+import math
+
+def check(temp,humid,wind):
+    prediction=(0.5*(temp*temp))-(0.2*(humid))+(0.1*(wind))-15
+    print(prediction)
+    if prediction>=300:
+        return "It is Sunny"
+    elif prediction>200 and prediction<=300:
+        return "It is Cloudy"
+    elif prediction>100 and prediction<200:
+        return "It is Rainy"
+    elif prediction<=100:
+        return "It is Stormy"
+
+
+#driver 
+data=[[20,70,15],[30,60,10],[16,90,25],[20,80,5]]
+for i in range(len(data)):
+    temp=data[i][0]
+    humid=data[i][1]
+    wind=data[i][2]
+    print(check(temp,humid,wind))
